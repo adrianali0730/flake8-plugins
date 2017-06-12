@@ -1,21 +1,27 @@
 #!/usr/bin/env python
 
-import pycodestyle
-import ast
 import re
 
 __version__ = '1.0'
 
-class Checker(object):
+CHECKS = [
+    (re.compile(r"(?<![=\s])\s*\bXPATH\b\s+[^(=]"), 'UIA200', 'XPATH statement found.')
+]
 
-	def __init__(self, tree, filename):
-		self.tree = tree
 
-	def check_XPATH(physical_line):
-		match = XPATH.search('By.XPATH')
-		print ("Works")
-		if match:
-			return match.start(), 'UIA-200 XPATH except: Use CSS Selectors not XPATH.'
+def flake8ext(f):
+    """Decorate flake8 extension function."""
+    f.name = 'flake8-XPATH'
+    f.version = __version__
+    return f
 
-	check_XPATH.name = 'flake8-XPATH'
 
+@flake8ext
+def print_usage(logical_line, noqa=None):
+    if noqa:
+        return
+    for regexp, code, message in CHECKS:
+        match = regexp.search(logical_line)
+        if match is not None:
+            yield match.start(), '{0} {1}'.format(code, message)
+            return
