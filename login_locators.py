@@ -13,6 +13,7 @@ class LoginPageLocators(object):
     design borrowed from
     https://github.com/baijum/pitracker/blob/master/test/acceptance/locators.py
     """
+
     login_input_field_loc = {
 
         'username': (By.CSS_SELECTOR, "input.text.user-name"),
@@ -28,5 +29,6 @@ class LoginPageLocators(object):
     login_text_field_loc = {
 
         'initial_loading': (By.CSS_SELECTOR, '.initial-loading'),
+        'submit2': (By.XPATH, '//button/action'),
         'logout_message': (By.CSS_SELECTOR, '.w-Logout')
     }

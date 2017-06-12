@@ -2,12 +2,10 @@
 
 import re
 
-import re
-
 __version__ = '1.0'
 
 CHECKS = [
-    (re.compile(r"(?<![=\s])\s*\bXPATH\b\s+[^(=]"), 'UIA200', 'XPATH statement found.')
+    (re.compile(r"By.XPATH"), 'UIA200', 'XPATH statement found.')
 ]
 
 
