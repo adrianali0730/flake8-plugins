@@ -10,7 +10,7 @@ setup(
     install_requires=['setuptools'],
     entry_points={
         'flake8.extension': [
-            'UIA-200 = XPATH:check_XPATH'
+            'UIA-200 = XPATH:Checker'
         ],
     },
     url='https://github.com/adrianali0730/flake8-plugins',
