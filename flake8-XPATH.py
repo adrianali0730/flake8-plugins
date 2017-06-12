@@ -15,7 +15,7 @@ class Checker(object):
 		match = XPATH.search('By.XPATH')
 		print ("Works")
 		if match:
-			return match.start(), 'UIA200 XPATH except: Use CSS Selectors not XPATH.'
+			return match.start(), 'UIA-200 XPATH except: Use CSS Selectors not XPATH.'
 
 	check_XPATH.name = 'flake8-XPATH'
 
