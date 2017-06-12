@@ -1,7 +1,7 @@
 from __future__ import with_statement
 from setuptools import setup
 
-def get_version(fname='flake8-XPATH.py'):
+def get_version(fname='flake8_XPATH.py'):
     with open(fname) as f:
         for line in f:
             if line.startswith('__version__'):
@@ -9,7 +9,7 @@ def get_version(fname='flake8-XPATH.py'):
 
 
 setup(
-    name='flake8-XPATH',
+    name='flake8_XPATH',
     description='A flake8 extension that checks for XPATH: statements',
     keywords='flake8 XPATH',
     version='get_version()',
