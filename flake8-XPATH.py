@@ -11,7 +11,7 @@ CHECKS = [
 ]
 
 
-def flake8-XPATH(f):
+def flake8_XPATH(f):
     """Decorate flake8 extension function."""
     f.name = 'flake8-XPATH'
     f.version = __version__
