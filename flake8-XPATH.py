@@ -1,22 +1,21 @@
 #!/usr/bin/env python
 
-try:
-	import pycodestyle
-	import re
-except:
-	import pep8 as pycodestyle
-	import re
+import pycodestyle
+import ast
+import re
 
 __version__ = '1.0'
 
-XPATH = re.compile(r'(By.XPATH)')
+class Checker(object):
 
-def check_XPATH(physical_line):
-	if pycodestyle.noqa(physical_line):
-		return
-	match = XPATH.search(physical_line)
-	if match:
-		return match.start(), 'UIA-200 XPATH except: Use CSS Selectors not XPATH.'
+	def __init__(self, tree, filename):
+		self.tree = tree
 
-check_XPATH.name = 'flake8-XPATH'
-check_XPATH.version = __version__
+	def check_XPATH(physical_line):
+		match = XPATH.search('By.XPATH')
+		print ("Works")
+		if match:
+			return match.start(), 'UIA200 XPATH except: Use CSS Selectors not XPATH.'
+
+	check_XPATH.name = 'flake8-XPATH'
+
