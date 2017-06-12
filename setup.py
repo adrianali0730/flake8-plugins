@@ -18,7 +18,7 @@ setup(
     install_requires=['setuptools'],
     entry_points={
         'flake8.extension': [
-            'UIA200 = UIA200:XPATH_usage'
+            'UIA200 = flake8-XPATH:XPATH_usage'
         ],
     },
     url='https://github.com/adrianali0730/flake8-plugins',
