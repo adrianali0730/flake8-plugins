@@ -2,6 +2,8 @@
 
 import re
 
+import re
+
 __version__ = '1.0'
 
 CHECKS = [
@@ -9,15 +11,15 @@ CHECKS = [
 ]
 
 
-def flake8ext(f):
+def flake8-XPATH(f):
     """Decorate flake8 extension function."""
     f.name = 'flake8-XPATH'
     f.version = __version__
     return f
 
 
-@flake8ext
-def print_usage(logical_line, noqa=None):
+@flake8_XPATH
+def XPATH_usage(logical_line, noqa=None):
     if noqa:
         return
     for regexp, code, message in CHECKS:

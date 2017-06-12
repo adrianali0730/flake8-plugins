@@ -1,7 +1,7 @@
 from __future__ import with_statement
 from setuptools import setup
 
-def get_version(fname='flake8_print.py'):
+def get_version(fname='flake8-XPATH.py'):
     with open(fname) as f:
         for line in f:
             if line.startswith('__version__'):
@@ -18,7 +18,7 @@ setup(
     install_requires=['setuptools'],
     entry_points={
         'flake8.extension': [
-            'UIA200 = flake8_XPATH:XPATH_usage'
+            'UIA200 = flake8-XPATH:XPATH_usage'
         ],
     },
     url='https://github.com/adrianali0730/flake8-plugins',
