@@ -5,8 +5,11 @@ import re
 __version__ = '1.0'
 
 CHECKS = [
-    (re.compile(r'By.XPATH'), 'UIA200', 'XPATH statement found. Use CSS Selector instead.'),
-    (re.compile(r'checked'), 'UIA201', 'Remove temporary selection "checked".')
+    (re.compile(r'By.XPATH'), 'UIA200', 'XPATH statement found. Use CSS Selector instead.')
+]
+
+CHECKS2 = [
+    (re.compile(r'BY'), 'UIA201', 'Remove temporary selection "checked".')
 ]
 
 
@@ -18,11 +21,21 @@ def flake8_MediaMath(f):
 
 
 @flake8_MediaMath
-def statement_usage(physical_line, noqa=None):
+def statement_usage(logical_line, noqa=None):
     if noqa:
         return
     for regexp, code, message in CHECKS:
-        match = regexp.search(physical_line)
+        match = regexp.search(logical_line)
+        if match is not None:
+            yield match.start(), '{0} {1}'.format(code, message)
+            return
+
+@flake8_MediaMath
+def statement_usage2(logical_line, noqa=None):
+    if noqa:
+        return
+    for regexp, code, message in CHECKS2:
+        match = regexp.search(logical_line)
         if match is not None:
             yield match.start(), '{0} {1}'.format(code, message)
             return

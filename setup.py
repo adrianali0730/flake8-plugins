@@ -21,7 +21,7 @@ setup(
             'UIA200 = flake8_MediaMath:statement_usage'
         ],
         'flake8.extension': [
-            'UIA201 = flake8_MediaMath:statement_usage'
+            'UIA201 = flake8_MediaMath:statement_usage2'
         ],
     },
     url='https://github.com/adrianali0730/flake8-plugins',
