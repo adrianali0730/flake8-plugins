@@ -5,8 +5,8 @@ import re
 __version__ = '1.0'
 
 CHECKS = [
-    (re.compile(r("By.XPATH")), 'UIA200', 'XPATH statement found. Use CSS Selector instead.'),
-    (re.compile(r("By.CSS_SELECTOR")), 'UIA201', 'Remove temporary selection "checked".'),
+    (re.compile(r"By.XPATH"), 'UIA200', 'XPATH statement found. Use CSS Selector instead.'),
+    (re.compile(r"By.CSS_SELECTOR"), 'UIA201', 'Remove temporary selection "checked".')
 ]
 
 
