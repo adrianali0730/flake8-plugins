@@ -22,7 +22,7 @@ def statement_usage(logical_line, noqa=None):
     if noqa:
         return
     for regexp, code, message in CHECKS:
-        match = regexp.finditer(logical_line)
+        match = regexp.findall(logical_line)
         if match is not None:
-            yield match.start(), '{0} {1}'.format(code, message)
+            yield match, '{0} {1}'.format(code, message)
             return
