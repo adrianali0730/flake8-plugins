@@ -18,7 +18,8 @@ setup(
     install_requires=['setuptools'],
     entry_points={
         'flake8.extension': [
-            'UIA200 = flake8_MediaMath:XPATH_usage'
+            'UIA200 = flake8_MediaMath:statement_usage',
+            'UIA201 = flake8_MediaMath:statement_usage'
         ],
     },
     url='https://github.com/adrianali0730/flake8-plugins',

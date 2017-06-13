@@ -5,7 +5,8 @@ import re
 __version__ = '1.0'
 
 CHECKS = [
-    (re.compile(r"By.XPATH"), 'UIA200', 'XPATH statement found.')
+    (re.compile(r"By.XPATH"), 'UIA200', 'XPATH statement found. Use CSS Selector instead.'),
+    (re.compile(r":checked"), 'UIA201', 'Remove temporary selection "checked".')
 ]
 
 
@@ -17,7 +18,7 @@ def flake8_MediaMath(f):
 
 
 @flake8_MediaMath
-def XPATH_usage(logical_line, noqa=None):
+def statement_usage(logical_line, noqa=None):
     if noqa:
         return
     for regexp, code, message in CHECKS:
