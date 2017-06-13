@@ -1,7 +1,7 @@
 from __future__ import with_statement
 from setuptools import setup
 
-def get_version(fname='flake8_XPATH.py'):
+def get_version(fname='flake8_MediaMath.py'):
     with open(fname) as f:
         for line in f:
             if line.startswith('__version__'):
@@ -9,17 +9,18 @@ def get_version(fname='flake8_XPATH.py'):
 
 
 setup(
-    name='flake8_XPATH',
-    description='A flake8 extension that checks for XPATH: statements',
-    keywords='flake8 XPATH',
-    version='get_version()',
+    name='flake8-MediaMath',
+    description='A flake8 extension that provides checks related to MediaMath.',
+    keywords='flake8 MediaMath',
+    version=get_version(),
     author='Adrian Ali',
     author_email='adrianali0730@gmail.com',
     install_requires=['setuptools'],
     entry_points={
         'flake8.extension': [
-            'UIA200 = flake8_XPATH:XPATH_usage'
+            'UIA200 = flake8_MediaMath:XPATH_usage'
         ],
     },
     url='https://github.com/adrianali0730/flake8-plugins',
+    py_modules=['flake8_MediaMath'],
 )
