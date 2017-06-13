@@ -18,7 +18,9 @@ setup(
     install_requires=['setuptools'],
     entry_points={
         'flake8.extension': [
-            'UIA200 = flake8_MediaMath:statement_usage',
+            'UIA200 = flake8_MediaMath:statement_usage'
+        ],
+        'flake8.extension': [
             'UIA201 = flake8_MediaMath:statement_usage'
         ],
     },
