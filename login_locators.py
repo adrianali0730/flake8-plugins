@@ -17,7 +17,7 @@ class LoginPageLocators(object):
     login_input_field_loc = {
 
         'username': (By.CSS_SELECTOR, "input.text.user-name"),
-        'password': (By.CSS_SELECTOR, "input.password")
+        'password': (By.CSS_SELECTOR, "input.passwords")
     }
 
     login_button_loc = {
