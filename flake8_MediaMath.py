@@ -47,6 +47,9 @@ CHECKS = [
     #UIA202
     (re.compile(r'\'{1}[^\']*\"{1}.*\"{1}.*\'{1}'), 'UIA202', 'Locators should not contain specific text.'),
 
+    #UIA301
+    (re.compile(r'def .*verify.*\('), 'UIA301', 'This method should not contain the word "verify".'),
+
     #UIA200 (Always needs to stay at the bottom)
     (re.compile(r'By.XPATH'), 'UIA200', 'XPATH statement found. Use CSS Selector instead.') 
 
