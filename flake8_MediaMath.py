@@ -4,6 +4,7 @@ import re
 import os
 from os.path import basename
 import math
+import sys
 
 __version__ = '1.0'
 
@@ -78,7 +79,7 @@ def statement_usage(physical_line, noqa=None):
                 if(code == 'UIA200'):
                     row = row + 1
             if match is not None:
-                print('./{0}:{1}:{2}: {3} {4}'.format(basename(__file__), row , match.start()+1 ,code, message)) 
+                print('./{0}:{1}:{2}: {3} {4}'.format(basename(sys.argv[1]), row , match.start()+1 ,code, message)) 
                 if(code == 'UIA200'):
                     row = row + 1
 
